@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('reminders', \App\Http\Livewire\Reminders::class)->name('reminders');
+Route::get('add-reminder', \App\Http\Livewire\AddReminder::class)->name('add-reminder');
