@@ -22,14 +22,10 @@ class NativeAppServiceProvider implements ProvidesPhpIni
 //            ->width(400)
 //            ->height(400);
 
-        Window::open('add-reminder')
-            ->title('Add Reminder')
-            ->route('add-reminder')
-
-//                ->rememberState()
-            ->showDevTools(false);
-//                ->width(400)
-//                ->height(400);
+//        Window::open('add-reminder')
+//            ->title('Add Reminder')
+//            ->route('add-reminder')
+//            ->showDevTools(false);
 
 
 //        Menu::new()

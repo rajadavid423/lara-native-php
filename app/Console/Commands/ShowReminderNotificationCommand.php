@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Reminder;
 use Illuminate\Console\Command;
 use Native\Laravel\Facades\Notification;
+use Native\Laravel\Facades\Settings;
 
 class ShowReminderNotificationCommand extends Command
 {
@@ -34,6 +35,7 @@ class ShowReminderNotificationCommand extends Command
             Notification::title('This is to remind you!')
                 ->message('Your reminder - '.$reminder->reminder)
                 ->show();
+            Settings::set('reminderCount', Reminder::whereStatus('Pending')->count());
         });
     }
 }

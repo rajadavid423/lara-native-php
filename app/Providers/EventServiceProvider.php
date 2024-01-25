@@ -31,10 +31,7 @@ class EventServiceProvider extends ServiceProvider
             Window::open('add-reminder')
                 ->title('Add Reminder')
                 ->route('add-reminder')
-//                ->rememberState()
                 ->showDevTools(false);
-//                ->width(400)
-//                ->height(400);
         });
     }
 

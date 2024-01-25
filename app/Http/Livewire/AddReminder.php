@@ -6,6 +6,7 @@ use App\Models\Reminder;
 use Livewire\Component;
 use Native\Laravel\Facades\Notification;
 use Native\Laravel\Facades\Settings;
+use Native\Laravel\Facades\Window;
 
 class AddReminder extends Component
 {
@@ -19,7 +20,9 @@ class AddReminder extends Component
             ->message($newReminder->reminder)
             ->show();
 
-        Settings::set('reminderCount', Reminder::count());
+        Window::close('add-reminder');
+
+        Settings::set('reminderCount', Reminder::whereStatus('Pending')->count());
         $this->reminder = "";
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\OpenAddReminderEvent;
 use App\Models\Reminder;
 use Livewire\Component;
 use Native\Laravel\Events\Settings\SettingChanged;
@@ -27,5 +28,10 @@ class Reminders extends Component
     public function render()
     {
         return view('livewire.reminders');
+    }
+
+    public function openAddReminder()
+    {
+        event(OpenAddReminderEvent::class);
     }
 }
